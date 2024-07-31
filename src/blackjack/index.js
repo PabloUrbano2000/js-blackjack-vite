@@ -66,6 +66,7 @@ const turnoComputadora = (puntosMinimos) => {
   let puntosComputadora = 0
   do {
     const carta = pedirCarta(deck)
+    deck = deck.filter((cart) => cart !== carta)
     puntosComputadora = acumularPuntos(carta, puntosJugadores.length - 1)
     const cartaHtml = crearCarta(carta, puntosJugadores.length - 1)
     divCartasJugadores[puntosJugadores.length - 1].append(cartaHtml)
@@ -76,6 +77,7 @@ const turnoComputadora = (puntosMinimos) => {
 // Eventos
 btnPedir.addEventListener('click', () => {
   const carta = pedirCarta(deck)
+  deck = deck.filter((cart) => cart !== carta)
   const puntosJugador = acumularPuntos(carta, 0)
   const cartaHtml = crearCarta(carta)
   divCartasJugadores[0].append(cartaHtml)

@@ -9,6 +9,6 @@ export const pedirCarta = (deck) => {
   }
   const cartaSeleccionada =
     deck.length % 2 === 1 ? deck[deck.length - 1] : deck[deck.length / 2]
-  deck = deck.filter((carta) => carta !== cartaSeleccionada)
+ 
   return cartaSeleccionada
 }
